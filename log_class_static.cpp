@@ -1,0 +1,1 @@
+static int var_static=5;
