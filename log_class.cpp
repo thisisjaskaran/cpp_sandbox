@@ -1,6 +1,9 @@
 #include<iostream>
+#include "log_class_static.cpp"
 
 using namespace std;
+
+extern int var_static;
 
 class Log
 {
@@ -43,6 +46,8 @@ int main()
     log.Warn("This is a Warning!");
     log.Info("This is Info");
     log.Error("This is an Error");
+
+    cout<<var_static<<endl;
 
     return 0;
 }
