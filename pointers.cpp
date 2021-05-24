@@ -4,6 +4,8 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello World\n";
+    int var = 8;
+    void *ptr = &var;
+    cout << ptr << endl;
     return 0;
 }
