@@ -38,6 +38,11 @@ public:
     string GetClassName() override { return "Player"; }
 };
 
+class A : public Printable{
+public:
+    string GetClassName() override {return "A";}
+};
+
 void PrintName(Entity* entity)
 {
     cout <<"Player Name : "<< entity->GetName() << endl;
@@ -56,8 +61,10 @@ int main()
     Player* p=new Player("Cherno");
     PrintName(p);
 
+
     PrintClassName(e);
     PrintClassName(p);
+    PrintClassName(new A()); // only for testing purposes, try not to do this though, this is a memory leak
 
     return 0;
 }
