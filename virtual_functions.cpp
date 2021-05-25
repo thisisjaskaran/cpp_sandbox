@@ -1,3 +1,14 @@
+/*
+
+We use virtual functions when we want a function in the base class to be able to be overwritten if it has to be in a derived class.
+In that case, the base class function has to be made 'virtual'
+
+Virtual function (v-table) is memory expensive.
+
+Virtual functions have a big runtime cost.
+
+*/
+
 #include<iostream>
 
 using namespace std;
@@ -14,7 +25,7 @@ private:
     string m_Name;
 public:
     Player(const string& name) : m_Name(name){}
-    string GetName() { return m_Name; }
+    string GetName() override { return m_Name; }
 };
 
 void PrintName(Entity* entity)
