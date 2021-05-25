@@ -6,8 +6,19 @@ class Entity
 {
 private:
     int m_X, m_Y;
+    mutable int var=0;
 public:
-    int GetX() const
+    Entity(int x,int y)
+    {
+        m_X=x;
+        m_Y=y;
+    }
+    int GetX() const // promise to not modify any class variable in this function
+    {
+        var=2; // mutable bypasses previous promise
+        return m_X;
+    }
+    int GetX()
     {
         return m_X;
     }
@@ -15,6 +26,11 @@ public:
     {
         m_X=x;
     }
+};
+
+void PrintEntity(const Entity& e)
+{
+    cout<<e.GetX()<<endl;
 }
 int main()
 {
@@ -26,8 +42,11 @@ int main()
     int const* c=new int; // *exactly* the same as const int* c = new int;
 
     int* const d=new int; //can be reassigned, but pointed value can't be changed
-    
-    *a=2;
-    a=(int*)&MAX_AGE; // method to bypass const promise
+
+    // *a=2;
+    // a=(int*)&MAX_AGE; // method to bypass const promise
+
+    Entity e(2,2);
+    PrintEntity(e);
     return 0;
 }
