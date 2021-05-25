@@ -45,7 +45,7 @@ int main()
 
     // *a=2;
     // a=(int*)&MAX_AGE; // method to bypass const promise
-
+    
     int x=8;
     auto f=[=]() mutable
     {
