@@ -46,6 +46,16 @@ int main()
     // *a=2;
     // a=(int*)&MAX_AGE; // method to bypass const promise
 
+    int x=8;
+    auto f=[=]() mutable
+    {
+        x++;
+        cout<<x<<endl;
+    };
+    f();
+
+    //after this, x will still be 8, since we passed by value
+
     Entity e(2,2);
     PrintEntity(e);
     return 0;
