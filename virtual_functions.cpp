@@ -7,6 +7,8 @@ Virtual function (v-table) is memory expensive.
 
 Virtual functions have a big runtime cost.
 
+‘override’ has to be written in the derived class functions. It was introduced in C++11
+
 */
 
 #include<iostream>
